@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kerbside - Your ScrapDaddy ;)</title>
+    <title>Kerbside</title>
     <!-- Add Bootstrap CSS link here -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS for the background image -->
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
     <!-- Navigation bar -->
@@ -26,31 +28,21 @@
         </div>
     </nav>
 
-    <!-- About Section -->
-    <section class="py-5 text-center">
-        <div class="container">
-            <h1>About Us</h1>
-            <p>Welcome to Kerbside - Your solution for dealing with scrap. Post details about your scrap items and connect with interested people.</p>
-        </div>
-    </section>
-
-    <!-- Stylish Search Feature -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for listings...">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">Search</button>
-                        </div>
-                    </div>
+    <!-- About Section with Full-page Background Image -->
+    <section class="about-section">
+        <div class="background-image">
+            <!-- Overlay to make text more readable -->
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="about-content">
+                    <h1>About Us</h1>
+                    <p>Welcome to Kerbside - Your solution for dealing with scrap. Post details about your scrap items and connect with interested people.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Top Listings Display -->
+    <!-- Listings Section -->
     <section class="py-5">
         <div class="container">
             <h2 id="listings">Top Listings</h2>

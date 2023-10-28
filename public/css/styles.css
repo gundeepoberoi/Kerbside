@@ -1,0 +1,31 @@
+/* Custom CSS for the background image and overlay */
+.about-section {
+    position: relative;
+    height: 100vh;
+}
+
+.background-image {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Scrap_Metal.JPG/1200px-Scrap_Metal.JPG?20130529174329');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    position: relative;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.about-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
