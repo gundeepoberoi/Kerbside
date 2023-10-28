@@ -64,3 +64,84 @@
     color: #026670;
   }
   
+  .listings, .listing-desc {
+    background-color: #e7f8b2a2;
+    background-image: url("../Pictures/cards.png");
+    background-size: 53.1rem 33rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* bottom: 5em; */
+  }
+  
+  .listing-desc {
+    height: 75vh;
+    position: sticky;
+    top: 5em;
+    bottom: 5em;
+    left: 70rem;
+  }
+  
+  .listings {
+    padding-top: 2rem;
+    padding-left: 1rem;
+    height: 33vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .listings img {
+    width: 10em;
+    height: 10em; 
+  }
+  
+  .search-bar-listing{
+    width: 100%;
+    height: 70px;
+    max-width: 700px;
+    background: #e7f8b2a2;
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 10px 20px;
+    position:relative;
+    left: 20vw; 
+    margin-top: 5vh;
+    backdrop-filter: blur(4px) saturate(180%);
+    margin-left: 17vw;
+  }
+  
+  .search-bar-listing input{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 24px 20px;
+    font-size: 20px;
+    color: #026670;
+  }
+  
+  .search-bar-listing button{
+    border: 0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 0.4rem;
+    background: #9FEDD7;
+    position:relative; bottom: 0.04rem; left: 0.5rem;
+  
+  }
+  
+  .search-bar-listing button img {
+    width: 35px;
+    height: auto;
+  }
+  
+  .label-text {
+    padding-left: 0.5em;
+  }
+  
+  
+  .listing-wrapper div {
+    margin-bottom: 4em;
+  }
+    
