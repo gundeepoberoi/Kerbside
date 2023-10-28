@@ -5,6 +5,7 @@ const logger = require('morgan');
 const path = require('path');
 const router = require('./routes/index');
 const { auth } = require('express-openid-connect');
+const mysql = require('mysql');
 
 dotenv.load();
 
@@ -26,6 +27,17 @@ const port = process.env.PORT || 3000;
 if (!config.baseURL && !process.env.BASE_URL && process.env.PORT && process.env.NODE_ENV !== 'production') {
   config.baseURL = `http://localhost:${port}`;
 }
+
+// var con = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "kerbside"
+// });
+
+// con.connect(function(err) {
+//   if (err) throw err;
+//   console.log("Connected!");
+// });
 
 app.use(auth(config));
 
