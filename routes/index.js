@@ -3,27 +3,30 @@ const { requiresAuth } = require('express-openid-connect');
 
 router.get('/', function (req, res, next) {
   res.render('index', {
-    isAuthenticated: req.oidc.isAuthenticated()
+    isAuthenticated: req.oidc.isAuthenticated(),
+    title: 'About | Kerbside'
   });
 });
 
-router.get('/profile', requiresAuth(), function (req, res, next) {
-  res.render('profile', {
+router.get("/listings", function (req, res, next) {
+  res.render("listings", {
+    isAuthenticated: req.oidc.isAuthenticated(),
+    title: 'Listings | Kerbside'
+  });
+});
+
+router.get("/add", function (req, res, next) {
+  res.render("add", {
     userProfile: JSON.stringify(req.oidc.user, null, 2),
-    title: 'Profile page'
+    title: 'Add | Kerbside'
   });
 });
 
 router.get("/account", function (req, res, next) {
-  res.render("account");
-});
-
-router.get("/add", function (req, res, next) {
-  res.render("add");
-});
-
-router.get("/listings", function (req, res, next) {
-  res.render("listings");
+  res.render("account", {
+    userProfile: JSON.stringify(req.oidc.user, null, 2),
+    title: 'Account | Kerbside'
+  });
 });
 
 module.exports = router;
