@@ -9,11 +9,20 @@ app.get("/", function (req, res) {
   res.render("index");
 });
 
-//route for magic page
-app.get("/magic", function (req, res) {
-  res.render("magic");
+app.get("/account", function (req, res) {
+  res.render("account");
+});
+
+app.get("/add", function (req, res) {
+  res.render("add");
+});
+
+app.get("/listings", function (req, res) {
+  res.render("listings");
 });
 
 app.listen(8080, function () {
   console.log("Server is running on port 8080 ");
 });
+
+app.use(express.static('public'));
