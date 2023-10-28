@@ -1,0 +1,22 @@
+{
+  "name": "kerbside",
+  "version": "1.0.0",
+  "description": "Kerbside - Your ScrapDaddy ;)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gundeepoberoi/Kerbside.git"
+  },
+  "author": "Gundeep Oberoi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gundeepoberoi/Kerbside/issues"
+  },
+  "homepage": "https://github.com/gundeepoberoi/Kerbside#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
