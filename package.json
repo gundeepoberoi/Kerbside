@@ -1,26 +1,13 @@
 {
-  "name": "kerbside",
-  "version": "1.0.0",
-  "description": "Kerbside - Your ScrapDaddy ;)",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gundeepoberoi/Kerbside.git"
-  },
-  "author": "Gundeep Oberoi",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gundeepoberoi/Kerbside/issues"
-  },
-  "homepage": "https://github.com/gundeepoberoi/Kerbside#readme",
+  "name": "auth0-express-webapp-sample",
+  "scripts": {},
   "dependencies": {
-    "ejs": "^3.1.9",
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
+    "debug": "~3.2.7",
+    "dotenv": "^6.1.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-openid-connect": "^2.17.0",
+    "http-errors": "~1.8.1",
+    "morgan": "~1.10.0"
   }
 }
