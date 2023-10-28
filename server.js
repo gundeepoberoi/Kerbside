@@ -5,12 +5,12 @@ const logger = require('morgan');
 const path = require('path');
 const router = require('./routes/index');
 const { auth } = require('express-openid-connect');
-const mysql = require('mysql');
 
 dotenv.load();
 
 const app = express();
 
+// Sets up view engine to use the ejs files
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -18,6 +18,7 @@ app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
+// Auth0 settings
 const config = {
   authRequired: false,
   auth0Logout: true
@@ -28,16 +29,12 @@ if (!config.baseURL && !process.env.BASE_URL && process.env.PORT && process.env.
   config.baseURL = `http://localhost:${port}`;
 }
 
-// var con = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   password: "kerbside"
-// });
-
-// con.connect(function(err) {
-//   if (err) throw err;
-//   console.log("Connected!");
-// });
+// Test database connection
+const db = require('./routes/database');
+db.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected to kerbside database!");
+});
 
 app.use(auth(config));
 
@@ -65,6 +62,7 @@ app.use(function (err, req, res, next) {
   });
 });
 
+// Starts server
 http.createServer(app)
   .listen(port, () => {
     console.log(`Listening on ${config.baseURL}`);
