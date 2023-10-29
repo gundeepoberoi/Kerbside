@@ -46,4 +46,10 @@ router.post('/search', async(req, res, next) => {
     }
 });
 
+router.get('/details', async(req, res, next) => {
+    res.render('details', { title: 'Details | Kerbside',
+        isAuthenticated: req.oidc.isAuthenticated(),
+    });
+});
+
 module.exports = router;
