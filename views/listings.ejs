@@ -2,12 +2,13 @@
 
 
 <!-- Listings Section -->
+<script src="/functions/listingSearch.js"></script>
 <section class="py-5">
     <div class="container-search">
-      <center><form method="GET" class="search-bar">
-          <input type="text" class="form-control" placeholder="Search for scrap items" name="searchBar">
+      <center><form method="post" class="search-bar" name="filters" onsubmit="return false;">
+          <input type="text" id="search" class="form-control" placeholder="Search for scrap items" name="searchBar">
           <input type="hidden" name="category">
-          <button type="submit" class="btn btn-info">Go</button></center>
+          <button type="submit" class="btn btn-info" onclick="filterItems()">Go</button></center>
         
         <div class="dropdown-wrapper row p-5">
             <div class="form-floating col-md">

@@ -12,17 +12,13 @@ router.get('/', async(req, res, next) => {
 
 router.get('/search', async(req, res, next) => {
     request.post('http://localhost:3000/listings/search',
-        { json: { title: null,
-            description: null,
+        { json: { search: null,
             location: null,
             category: null,
-            tiemstamp: null,
-            quantity: null,
+            timestamp: null,
             mass: null,
             dimensions: null,
-            tags: null,
-            userID: null,
-            image: null }},
+            tags: null }},
         function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 res.status(200).send(body);
@@ -32,11 +28,19 @@ router.get('/search', async(req, res, next) => {
 });
 
 router.post('/search', async(req, res, next) => {
+    // Process input body
+    console.log("Search body: ", req.body);
+    let { search, location, category, timestamp, mass, dimensions, tags } = req.body;
+
+    // Search will find all entries if empty
+    if (search === null) search = ["%"];
+    // Otherwise it will only find entries including the given phrase
+    else search = "%"+search+"%";
+
     try {
-        console.log("entry");
-        items = await db.promise().query(`SELECT * FROM LISTINGSTABLE`);
-        console.log(items);
-        res.status(200).send(items);
+        items = await db.promise().query(`SELECT * FROM LISTINGSTABLE WHERE (title LIKE '${search}' OR description LIKE '${search}')`);
+        console.log(items[0]);
+        res.status(200).send(items[0]);
     } catch (err) {
         console.log(err);
     }
