@@ -176,12 +176,13 @@ body {
     width: auto; 
     max-height: 300px; 
     overflow: hidden;
+
 }
 
 .image-container img {
     width: auto; 
-    height: auto; 
-    object-fit: fit; 
+    height: 600px; 
+    object-fit: cover; 
 }
 .QandAButton {
     background: transparent;
