@@ -8,13 +8,6 @@ router.get('/', function (req, res, next) {
   });
 });
 
-router.get("/listings", function (req, res, next) {
-  res.render("listings", {
-    isAuthenticated: req.oidc.isAuthenticated(),
-    title: 'Listings | Kerbside'
-  });
-});
-
 router.get("/add", function (req, res, next) {
   res.render("add", {
     userProfile: JSON.stringify(req.oidc.user, null, 2),
