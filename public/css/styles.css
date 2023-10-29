@@ -80,6 +80,10 @@ body {
     color: white;
   }
 
+  .card-text{
+    height: 40px;
+  }
+
   .btn, .btn-info {
     color: #160C28;
   }
