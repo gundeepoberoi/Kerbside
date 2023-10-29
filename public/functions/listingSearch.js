@@ -54,8 +54,8 @@ filterItems = function() {
 
     var category = document.getElementById('category').value;
 
-    alert("Search: " + search);
-    alert("Category: " + category);
+    //alert("Search: " + search);
+    //alert("Category: " + category);
 
     itemDisplay.innerHTML = "Loading scrap...";
 
