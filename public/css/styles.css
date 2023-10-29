@@ -168,4 +168,14 @@ body {
   .listing-wrapper div {
     margin-bottom: 4em;
   }
-    
+  .image-container {
+    width: auto; 
+    max-height: 300px; 
+    overflow: hidden;
+}
+
+.image-container img {
+    width: auto; 
+    height: auto; 
+    object-fit: fit; 
+}

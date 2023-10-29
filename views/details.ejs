@@ -1,35 +1,75 @@
+<%- include('partials/header') -%>
 <div class="container">
-    <h1 class="mt-5 mb-4">Listing Details</h1>
-    
+<br><br>
+    <!-- Image Slider and Text on the Right -->
+    <div class="row">
+        <div class="col-6">
+            <!-- Image Slider Code -->
+            <div id="imageSlider" class="carousel slide" data-ride="carousel">
+                <!-- Carousel Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#imageSlider" data-slide-to="0" class="active"></li>
+                    <li data-target="#imageSlider" data-slide-to="1"></li>
+                    <!-- Add more indicators as needed -->
+                </ol>
+                <!-- Carousel Slides -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active image-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Scrap_Metal.JPG/1200px-Scrap_Metal.JPG?20130529174329" class="d-block w-100" alt="Image 1">
+                    </div>
+                    <div class="carousel-item image-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Scrap_Metal.JPG/1200px-Scrap_Metal.JPG?20130529174329" class="d-block w-100" alt="Image 2">
+                    </div>
+                    <!-- Add more carousel items with images as needed -->
+                </div>
+                <!-- Carousel Controls -->
+                <a class="carousel-control-prev" href="#imageSlider" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#imageSlider" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-6">
+            <!-- Fields -->
+            <div class="col-6 mt-2">
+                <h1 class="row mt-2 mb-2">Item Title</h1>
+                <div class="row mt-2"><strong>Dimensions:</strong> 120x80x30 cm</div>
+                <div class="row mt-2"><strong>Weight:</strong> 25 kg</div>
+                <div class="row mt-2"><strong>Time:</strong> Posted 2 days ago</div>
+                <div class="row mt-2"><strong>Location:</strong> 2.5 Km Away</div>
+            </div>
+        </div>
+    </div>
+
     <!-- Listing Information -->
-    <div class="card mb-4">
+    <div class="card mt-4">
         <div class="card-body">
-            <h5 class="card-title">Listing Title</h5>
-            <p class="card-text">Description of the listing goes here.</p>
-            
+            <h5 class="card-title">Description of the listing goes here.</h5>
+
             <!-- Tags -->
-            <div class="mb-2">
+            <div class="mb-3">
                 <span class="badge bg-info">Tag1</span>
                 <span class="badge bg-info">Tag2</span>
                 <span class="badge bg-info">Tag3</span>
             </div>
-            
-            <!-- Fields -->
-            <div class="row mb-3">
-                <div class="col-6"><strong>Dimensions:</strong> 120x80x30 cm</div>
-                <div class="col-6"><strong>Weight:</strong> 25 kg</div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-6"><strong>Time:</strong> Posted 2 days ago</div>
-                <div class="col-6"><strong>Location:</strong> City, State</div>
-            </div>
-            
+
             <!-- Additional Details -->
             <h3>Additional Details</h3>
             <p>This is where you can provide more detailed information about the listing.</p>
         </div>
     </div>
-    
+
+    <div>
+    <div class = "h3-info">Interested?</div>
+    <button type="submit" class="btn btn-info" onclick="createConvo()">Go</button>
+    </div>
     <!-- Back Button -->
-    <a href="/listings" class="btn btn-primary">Back to Listings</a>
+    <a href="/listings" class="btn btn-primary mt-3 mb-3 col-3">Back to Listings</a>
+    
 </div>
+
+<!-- <button class="QandAButton" onclick="window.location.href = 'Q&A.php';" data-toggle="tooltip" title="Do You Have Any Question?"></button> -->
