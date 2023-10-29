@@ -83,6 +83,10 @@ body {
   .btn, .btn-info {
     color: #160C28;
   }
+
+  .mb-2, .badge, .bg-info  {
+    color: #160C28;
+  }
   
   .listings, .listing-desc {
     background-color: #e7f8b2a2;
