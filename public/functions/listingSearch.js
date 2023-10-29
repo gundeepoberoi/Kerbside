@@ -127,7 +127,6 @@ loadTags = function() {
     .then(response => response.json())
     .then(data => {
         data.forEach(element => {
-            alert(element.tag);
             tagDisplay.insertAdjacentHTML("beforeend", ('<option value="' + element.tag +'" style="color:darkgreen">' + element.tag + '</option>'));
         })
     })
