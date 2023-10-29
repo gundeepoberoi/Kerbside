@@ -5,6 +5,7 @@ const logger = require('morgan');
 const path = require('path');
 const router = require('./routes/index');
 const listings = require('./routes/listings');
+const details = require('./routes/details');
 const { auth } = require('express-openid-connect');
 
 dotenv.load();
@@ -47,6 +48,7 @@ app.use(function (req, res, next) {
 
 app.use('/', router);
 app.use('/listings', listings);
+app.use('/details', details);
 
 // Catch 404 and forward to error handler
 app.use(function (req, res, next) {
