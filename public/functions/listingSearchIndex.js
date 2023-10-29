@@ -38,7 +38,7 @@ initialSearch = function() {
                 item += '<div class="col-3" style="font-size: 10px;">' + element.mass + '</div>';
                 item += '<div class="col-3" style="font-size: 10px;">' + element.timestamp + '</div>';
                 item += '<div class="col-3" style="font-size: 10px;">' + element.location + '</div>';
-                item += '</div><br><a href="/details/' + element.listingID + '" class="btn btn-info">View Details</a></div></div></div>';
+                item += '</div><br><a href="/details" class="btn btn-info">View Details</a></div></div></div>';
 
                 itemDisplay.insertAdjacentHTML("beforeend", item);
             }
