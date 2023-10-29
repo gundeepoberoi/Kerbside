@@ -1,4 +1,6 @@
 const itemDisplay = document.querySelector('#items');
+const categoryDisplay = document.querySelector('#category');
+const tagDisplay = document.querySelector('#tag');
 
 initialSearch = function() {
     itemDisplay.innerHTML = "Loading scrap...";
@@ -9,7 +11,13 @@ initialSearch = function() {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            search: null
+            search: null,
+            location: null,
+            category: null,
+            timestamp: null,
+            mass: null,
+            dimensions: null,
+            tags: null
         })
     })
     .then(response => response.json())
@@ -41,10 +49,13 @@ initialSearch = function() {
 }
 
 filterItems = function() {
-    search = document.getElementById('search').value;
+    var search = document.getElementById('search').value;
     if(search == "") search = null;
 
+    var category = document.getElementById('category').value;
+
     alert("Search: " + search);
+    alert("Category: " + category);
 
     itemDisplay.innerHTML = "Loading scrap...";
 
@@ -54,7 +65,13 @@ filterItems = function() {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            search: search
+            search: search,
+            location: null,
+            category: category,
+            timestamp: null,
+            mass: null,
+            dimensions: null,
+            tags: null
         })
     })
     .then(response => response.json())
@@ -70,7 +87,7 @@ filterItems = function() {
 
                 item =  '<div class="col-md-4 mb-4">';
                 item += '<div class="card">';
-                item += '<img class="card-img-top" src="/images/scrap-wood.jpeg" alt="Listing Image"><div class="card-body">';
+                item += '<img class="card-img-top image-fluid" src="/images/' + element.image + '" alt="Listing Image" style="width: 100%; height: 300px; object-fit: cover"><div class="card-body">';
                 item += '<h5 class="card-title">' + element.title + '</h5>';
                 item += '<p class="card-text">' + element.description + '</p>';
                 item += '<div class="mb-2"><span class="badge bg-info">' + element.category + '</span></div><div class="row">';
@@ -88,4 +105,35 @@ filterItems = function() {
     .catch(err => console.log(err));
 }
 
+loadCategories = function() {
+    categoryDisplay.innerHTML = '<option value="Any" style="color:darkgreen">Any</option>';
+    fetch("http://localhost:3000/listings/categories", {
+        method: "GET"
+    })
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(element => {
+            categoryDisplay.insertAdjacentHTML("beforeend", ('<option value="' + element.category + '" style="color:darkgreen">' + element.category + '</option>'));
+        })
+    })
+    .catch(err => console.log(err));
+}
+
+loadTags = function() {
+    tagDisplay.innerHTML = '<option value="None" style="color:darkgreen">None</option>';
+    fetch("http://localhost:3000/listings/tags", {
+        method: "GET"
+    })
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(element => {
+            alert(element.tag);
+            tagDisplay.insertAdjacentHTML("beforeend", ('<option value="' + element.tag +'" style="color:darkgreen">' + element.tag + '</option>'));
+        })
+    })
+    .catch(err => console.log(err));
+}
+
 initialSearch();
+loadCategories();
+loadTags();
