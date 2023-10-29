@@ -9,7 +9,13 @@ initialSearch = function() {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            search: null
+            search: null,
+            location: null,
+            category: null,
+            timestamp: null,
+            mass: null,
+            dimensions: null,
+            tags: null
         })
     })
     .then(response => response.json())
