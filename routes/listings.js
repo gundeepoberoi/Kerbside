@@ -4,18 +4,6 @@ var router = express.Router();
 
 const db = require('./database');
 
-// const blobToImage = (blob) => {
-//     return new Promise(resolve => {
-//       const url = URL.createObjectURL(blob)
-//       let img = new Image()
-//       img.onload = () => {
-//         URL.revokeObjectURL(url)
-//         resolve(img)
-//       }
-//       img.src = url
-//     })
-//   }
-
 router.get('/', async(req, res, next) => {
     res.render('listings', { title: 'Listings | Kerbside',
         isAuthenticated: req.oidc.isAuthenticated(),
