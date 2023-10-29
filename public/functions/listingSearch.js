@@ -1,10 +1,8 @@
-const { response } = require("express");
-
 filterItems = function() {
     search = document.getElementById('search').value;
     if(search == "") search = null;
 
-    alert("Search: ", search);
+    alert("Search: " + search);
 
     fetch("http://localhost:3000/listings/search", {
         method: "POST",
