@@ -2,85 +2,132 @@
 
 
 <!-- Listings Section -->
-<script src="/functions/listingSearch.js"></script>
-<section class="py-5">
-    <div class="container-search">
-      <center><form method="post" class="search-bar" name="filters" onsubmit="return false;">
-          <input type="text" id="search" class="form-control" placeholder="Search for scrap items" name="searchBar">
-          <input type="hidden" name="category">
-          <button type="submit" class="btn btn-info" onclick="filterItems()">Go</button></center>
-        
-        <div class="dropdown-wrapper row p-5">
-            <div class="form-floating col-md">
-                <select class="form-select" id="category" name="category">
-                    <option value="">Any</option>
-                    <option value="1">Category 1</option>
-                    <option value="2">Category 2</option>
-                    <option value="3">Category 3</option>
-                    <option value="4">Category 4</option>
-                    <option value="5">Category 5</option>
-                </select>
-                <label for="category">Category</label>
-            </div>
+<body>
+    <!-- Search Filters Section -->
+    <script src="/functions/listingSearch.js"></script>
+    <section class="py-5">
+        <div class="container">
+            <form method="post" class="search-bar-listing" onsubmit="return false;">
+                <div class="input-group">
+                    <input type="text" id="search" class="form-control" placeholder="Keyword search" name="searchBar">
+                    <button type="submit" class="btn btn-info" onclick="filterItems()">Go</button>
+                </div>
+            </form>
+            
+            <div class="row p-5">
+                <div class="col-md-2">
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="category" name="category">
+                            <option value="">Any</option>
+                            <option value="1">Category 1</option>
+                            <option value="2">Category 2</option>
+                            <option value="3">Category 3</option>
+                            <option value="4">Category 4</option>
+                            <option value="5">Category 5</option>
+                        </select>
+                        <label for="category">Category</label>
+                    </div>
+                </div>
+>>>>>>> f97d36897456c72c9b94e42f2284c5a826a96778
 
-            <div class="form-floating col-md">
-                <select class="form-select" id="Tag" name="Tag">
-                    <option value="">No option selected</option>
-                </select>
-                <label for="Tag">Tags</label>
-            </div>
-            <div class="form-floating col-md">
-                <select class="form-select" id="location" name="location">
-                    <option value="">Any</option>
-                    <option value="1">Within 1km </option>
-                    <option value="2">Within 5km</option>
-                    <option value="3">Within 10km</option>
-                    <option value="4">Within 15km</option>
-                    <option value="5">Within 25km</option>
-                </select>
-                <label for="location">Distance</label>
-            </div>
-        </div>
-      </form>
-      <br>
-  </div>
+                <div class="col-md-2">
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="Tag" name="Tag">
+                            <option value="">No option selected</option>
+                            <!-- Add options here -->
+                        </select>
+                        <label for="Tag">Tags</label>
+                    </div>
+                </div>
 
-  <div class="container">
-      <h2 id="listings">Top Listings</h2>
-      <div class="row">
-          <div class="col-md-4 mb-4">
-              <div class="card">
-                  <img class="card-img-top" src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Scrap_Metal.JPG/1200px-Scrap_Metal.JPG?20130529174329' alt="Listing 1">
-                  <div class="card-body">
-                      <h5 class="card-title">Listing 1</h5>
-                      <p class="card-text">Description of Listing 1.</p>
-                      <a href="#" class="btn btn-info">View Details</a>
-                  </div>
-                  </div>
-              </div>
-              <div class="col-md-4 mb-4">
-              <div class="card">
-                <img class="card-img-top" src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Scrap_Metal.JPG/1200px-Scrap_Metal.JPG?20130529174329' alt="Listing 1">
-                <div class="card-body">
-                    <h5 class="card-title">Listing 1</h5>
-                    <p class="card-text">Description of Listing 1.</p>
-                    <a href="#" class="btn btn-info">View Details</a>
+                
+                <div class="col-md-2">
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" placeholder="Dimensions" name="Dimensions">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" placeholder="Weight" name="Weight">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-floating mb-3">
+                        <label for="distancerange" class="form-label">Distance</label>
+                        <input type="range" class="form-range" min="1" step="5" max="25" id="distancerange">
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Listings Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="mb-4" id="listings">Top Listings</h2>
+            <div class="row">
+                <!-- Repeat the following card structure for each listing -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Scrap_Metal.JPG/1200px-Scrap_Metal.JPG?20130529174329" alt="Listing Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Listing Title</h5>
+                            <p class="card-text">Description of the listing goes here.</p>
+                            <a href="#" class="btn btn-info">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Scrap_Metal.JPG/1200px-Scrap_Metal.JPG?20130529174329" alt="Listing Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Listing Title</h5>
+                            <p class="card-text">Description of the listing goes here.</p>
+                            <a href="#" class="btn btn-info">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Scrap_Metal.JPG/1200px-Scrap_Metal.JPG?20130529174329" alt="Listing Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Listing Title</h5>
+                            <p class="card-text">Description of the listing goes here.</p>
+                            <a href="#" class="btn btn-info">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Scrap_Metal.JPG/1200px-Scrap_Metal.JPG?20130529174329" alt="Listing Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Listing Title</h5>
+                            <p class="card-text">Description of the listing goes here.</p>
+                            <a href="#" class="btn btn-info">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Scrap_Metal.JPG/1200px-Scrap_Metal.JPG?20130529174329" alt="Listing Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Listing Title</h5>
+                            <p class="card-text">Description of the listing goes here.</p>
+                            <a href="#" class="btn btn-info">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Scrap_Metal.JPG/1200px-Scrap_Metal.JPG?20130529174329" alt="Listing Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Listing Title</h5>
+                            <p class="card-text">Description of the listing goes here.</p>
+                            <a href="#" class="btn btn-info">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of the repeated card structure -->
             </div>
-            <div class="col-md-4 mb-4">
-            <div class="card">
-              <img class="card-img-top" src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Scrap_Metal.JPG/1200px-Scrap_Metal.JPG?20130529174329' alt="Listing 1">
-              <div class="card-body">
-                  <h5 class="card-title">Listing 1</h5>
-                  <p class="card-text">Description of Listing 1.</p>
-                  <a href="#" class="btn btn-info">View Details</a>
-              </div>
-              </div>
-              
-          </div>
-          </div>
-          <!-- Repeat this card structure for more listings -->
-      </div>
-      </div>
-  </section>
+        </div>
+    </section>
