@@ -4,6 +4,18 @@ var router = express.Router();
 
 const db = require('./database');
 
+// const blobToImage = (blob) => {
+//     return new Promise(resolve => {
+//       const url = URL.createObjectURL(blob)
+//       let img = new Image()
+//       img.onload = () => {
+//         URL.revokeObjectURL(url)
+//         resolve(img)
+//       }
+//       img.src = url
+//     })
+//   }
+
 router.get('/', async(req, res, next) => {
     res.render('listings', { title: 'Listings | Kerbside',
         isAuthenticated: req.oidc.isAuthenticated(),
@@ -39,7 +51,14 @@ router.post('/search', async(req, res, next) => {
 
     try {
         items = await db.promise().query(`SELECT * FROM LISTINGSTABLE WHERE (title LIKE '${search}' OR description LIKE '${search}')`);
-        console.log(items[0]);
+        console.log("Items: ", items[0]);
+
+        // items[0].forEach(async item => {
+        //     console.log("First item: ", item);
+        //     item.image = await blobToImage(new Blob([item.image]));
+        //     console.log(item.image);
+        // });
+
         res.status(200).send(items[0]);
     } catch (err) {
         console.log(err);
