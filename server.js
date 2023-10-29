@@ -6,8 +6,11 @@ const path = require('path');
 const router = require('./routes/index');
 const listings = require('./routes/listings');
 const details = require('./routes/details');
+const messaging = require('./routes/messaging');
 const { auth } = require('express-openid-connect');
-
+const axios = require('axios');
+const slackToken = 'xoxb-6104746594806-6108474493109-en6maSCmjbz5V0OVZvwYtI3W';
+var apicall = "https://slack.com/api/conversations.create";
 dotenv.load();
 
 const app = express();
@@ -49,6 +52,7 @@ app.use(function (req, res, next) {
 app.use('/', router);
 app.use('/listings', listings);
 app.use('/details', details);
+app.use('/messaging', messaging)
 
 // Catch 404 and forward to error handler
 app.use(function (req, res, next) {
