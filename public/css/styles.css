@@ -1,6 +1,11 @@
 /* Custom CSS for navbar */
-nav {
-  background-color: #9FEDD7;
+.nav-link {
+  padding-left: 20px;
+}
+
+body {
+  color: white;
+  background-color: #04773B;
 }
 
 /* Custom CSS for the background image and overlay */
@@ -68,6 +73,15 @@ nav {
     padding: 24px 20px;
     font-size: 20px;
     color: #026670;
+  }
+
+  div.card {
+    background-color: #1E441E;
+    color: white;
+  }
+
+  .btn, .btn-info {
+    color: #160C28;
   }
   
   .listings, .listing-desc {
