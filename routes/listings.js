@@ -37,8 +37,11 @@ router.post('/search', async(req, res, next) => {
     // Otherwise it will only find entries including the given phrase
     else search = "%"+search+"%";
 
+    // Search will find all entries if empty
+    if (category === "Any" || category === null) category = ["%"];
+
     try {
-        items = await db.promise().query(`SELECT * FROM LISTINGSTABLE WHERE (title LIKE '${search}' OR description LIKE '${search}')`);
+        items = await db.promise().query(`SELECT * FROM LISTINGSTABLE WHERE (title LIKE '${search}' OR description LIKE '${search}') AND category LIKE '${category}'`);
         console.log("Items: ", items[0]);
 
         // items[0].forEach(async item => {
@@ -54,9 +57,31 @@ router.post('/search', async(req, res, next) => {
 });
 
 router.get('/details', async(req, res, next) => {
+
+
     res.render('details', { title: 'Details | Kerbside',
         isAuthenticated: req.oidc.isAuthenticated(),
     });
 });
+
+router.get('/categories', async(req, res, next) => {
+    try {
+        categories = await db.promise().query(`SELECT distinct category FROM LISTINGSTABLE`);
+        console.log(categories[0][0]);
+        res.status(200).send(categories[0]);
+    } catch (err) {
+        console.log(err);
+    }
+})
+
+router.get('/tags', async(req, res, next) => {
+    try {
+        tags = await db.promise().query(`SELECT distinct tag FROM TAGSTABLE`);
+        console.log(tags[0][0]);
+        res.status(200).send(tags[0]);
+    } catch (err) {
+        console.log(err);
+    }
+})
 
 module.exports = router;
